@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Search and Filter Template</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- The font used for the app. You can change this to any other font. -->
+		<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet" />
+		<!-- This line loads the CSS file containing the styles -->
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body>
+		<main>
+			<h1 id="header">Search and Filter Template</h1>
+			
+			<!-- Search and Control Filters Section -->
+			<section id="controls">
+				<div id="search-container">
+					<input type="text" id="search-input" placeholder="Search by word or definition..." />
+				</div>
+
+				<!-- Category filters (horizontal) -->
+				<div id="category-filters">
+					<h3>Categories</h3>
+					<ul id="category-list"></ul>
+				</div>
+
+				<div id="filters-and-content">
+					<!-- Tag filters (vertical) -->
+					<div id="tag-filters">
+						<h3>Parts of Speech</h3>
+						<ul id="tag-list"></ul>
+					</div>
+
+					<div id="content-container">
+						<!-- Sort and entries per page controls -->
+						<div id="list-controls">
+							<div id="sort-control">
+								<label for="sort-select">Sort by:</label>
+								<select id="sort-select">
+									<option value="id">ID</option>
+									<option value="word">Word</option>
+									<option value="category">Category</option>
+									<option value="pos">Part of Speech</option>
+									<option value="definition">Definition</option>
+								</select>
+							</div>
+							
+							<div id="entries-per-page">
+								<label for="entries-select">Entries per page:</label>
+								<select id="entries-select">
+									<option value="20">20</option>
+									<option value="50" selected>50</option>
+									<option value="100">100</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- Entries list -->
+						<ul id="entries-list"></ul>
+						
+						<!-- Pagination -->
+						<div id="pagination">
+							<button id="prev-page" disabled>‹ Previous</button>
+							<span id="page-info">Page 1 of 1</span>
+							<button id="next-page" disabled>Next ›</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- Import JavaScript file -->
+		<script src="./index.js" type="module"></script>
+	</body>
+</html>

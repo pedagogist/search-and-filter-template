@@ -1,0 +1,276 @@
+/* CSS reset - Don't modify */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	text-size-adjust: none;
+}
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+
+input, button, textarea, select {
+	font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 650;
+	text-wrap: balance;
+	overflow-wrap: break-word;
+}
+/* End of CSS reset */
+
+/* Applies a custom font and centers the page using a grid layout. */
+html {
+	font-family: "Playpen Sans", fantasy;
+	font-size: clamp(12px, 0.5vw + 9.6px, 16px);
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+	background-color: #f4f8fb;
+}
+
+body {
+	display: contents;
+}
+
+/* Arranges the main content into rows for header and content */
+main {
+	padding: 1rem;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	gap: 1rem;
+	max-width: 60rem;
+	overflow-y: auto;
+}
+
+/* Header styles */
+#header {
+	color: #002a44;
+	line-height: 1;
+	margin-bottom: 1rem;
+}
+
+/* Controls section with search and filters */
+#controls {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+/* Search input styles */
+#search-container {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+#search-input {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.5rem;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Category filters (horizontal) */
+#category-filters {
+	margin-bottom: 1rem;
+}
+
+#category-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	list-style: none;
+	padding: 0.5rem 0;
+}
+
+#category-list li {
+	margin-right: 1rem;
+}
+
+#category-list label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+#category-list span {
+	margin-left: 0.25rem;
+}
+
+/* Layout for filters and content */
+#filters-and-content {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 1rem;
+}
+
+/* Tag filters (vertical) */
+#tag-filters {
+	padding-right: 1rem;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#tag-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+#tag-list label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+#tag-list span {
+	margin-left: 0.25rem;
+}
+
+/* List controls for sorting and pagination */
+#list-controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+select {
+	padding: 0.3rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.3rem;
+	background-color: white;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Entries list styling */
+#entries-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.entry-item {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.5rem;
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s;
+}
+
+.entry-item:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.entry-item details {
+	width: 100%;
+}
+
+.entry-item summary {
+	padding: 0.75rem;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	background-color: #fefefe;
+	position: relative;
+}
+
+.entry-item summary:hover {
+	background-color: #f4f8fb;
+}
+
+.entry-word {
+	margin: 0;
+	flex: 1;
+	color: #002a44;
+}
+
+.entry-category {
+	color: #007acc;
+	margin-right: 1.5rem;
+	font-size: 90%;
+}
+
+.entry-id {
+	color: #666;
+	font-size: 85%;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.75rem;
+}
+
+.entry-content {
+	padding: 0.75rem;
+	background-color: white;
+}
+
+.entry-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.entry-pos {
+	padding: 1px 3px;
+	color: #777;
+	border: 1px solid #777;
+	border-radius: 2px;
+	font-size: 90%;
+}
+
+.entry-definition {
+	margin-top: 0.5rem;
+}
+
+/* Pagination controls */
+#pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+button {
+	appearance: none;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 0.5rem 2rem;
+	border-radius: 0.5rem;
+	background-color: #ddf5ff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s, box-shadow 0.3s;
+	cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	background-color: #c1eaff;
+}
+
+button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+#page-info {
+	color: #002a44;
+	font-size: 90%;
+}

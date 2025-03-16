@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"word": "hello",
+		"pos": ["n", "interj"],
+		"category": "greeting",
+		"definition": "A phrase used for greeting someone."
+	},
+	{
+		"id": 2,
+		"word": "world",
+		"pos": ["n"],
+		"category": "geography",
+		"definition": "The earth, together with all of its countries and peoples."
+	},
+	{
+		"id": 3,
+		"word": "multimedia",
+		"pos": ["adj"],
+		"category": "technology",
+		"definition": "Using more than one medium of expression."
+	}
+]

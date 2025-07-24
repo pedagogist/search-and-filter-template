@@ -7,6 +7,7 @@
 
 html {
 	text-size-adjust: none;
+	interpolate-size: allow-keywords;
 }
 
 body {
@@ -20,13 +21,29 @@ img, picture, video, canvas, svg {
 }
 
 input, button, textarea, select {
+	box-sizing: inherit;
+	color: inherit;
 	font: inherit;
+	line-height: inherit;
+}
+
+button {
+	appearance: none;
+	border: none;
+	background: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 650;
 	text-wrap: balance;
 	overflow-wrap: break-word;
+}
+
+[hidden] {
+	display: none;
 }
 /* End of CSS reset */
 
@@ -54,11 +71,10 @@ main {
 	grid-template-rows: auto 1fr;
 	gap: 1rem;
 	max-width: 60rem;
-	overflow-y: auto;
 }
 
-/* Header styles */
-#header {
+/* Heading styles */
+#heading {
 	color: #002a44;
 	line-height: 1;
 	margin-bottom: 1rem;
@@ -151,7 +167,7 @@ main {
 	margin-bottom: 1rem;
 }
 
-select {
+.dropdown {
 	padding: 0.3rem;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 0.3rem;
@@ -249,25 +265,29 @@ select {
 	margin-top: 1rem;
 }
 
-button {
-	appearance: none;
+.btn {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	padding: 0.5rem 2rem;
 	border-radius: 0.5rem;
-	background-color: #ddf5ff;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	transition: background-color 0.3s, box-shadow 0.3s;
-	cursor: pointer;
 }
 
-button:hover:not(:disabled) {
+.btn:hover:not(:disabled) {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	background-color: #c1eaff;
 }
 
-button:disabled {
+.btn:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+
+.btn-pagination {
+	background-color: #ddf5ff;
+}
+
+.btn-pagination:hover:not(:disabled) {
+	background-color: #c1eaff;
 }
 
 #page-info {

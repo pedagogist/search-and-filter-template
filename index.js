@@ -1,4 +1,7 @@
-import example from "./data/example.json" with { type: "json" };
+import { csvParse, autoType } from "https://cdn.jsdelivr.net/npm/d3-dsv/+esm";
+
+const response = await fetch("./data/example.csv");
+const dataset = csvParse(await response.text(), autoType);
 
 // State variables
 let currentPage = 1;
@@ -24,8 +27,8 @@ const pageInfo = document.getElementById("page-info");
  * You are encouraged to further sanitise them by, for example,
  * converting them to lower case and expanding the abbreviations
  */
-function normalisePos(pos) {
-	return (Array.isArray(pos) ? pos : [pos]).filter(Boolean);
+function extractPos(pos) {
+	return pos.split("|").filter(Boolean);
 }
 
 /**
@@ -38,7 +41,7 @@ function compareStrings(a, b) {
 }
 
 /**
- * Initialize the application
+ * Initialise the application
  */
 function init() {
 	setupFilters();
@@ -53,11 +56,11 @@ function setupFilters() {
 	const categories = new Set();
 	const tags = new Set();
 
-	for (const item of example) {
+	for (const item of dataset) {
 		if (item.category) {
 			categories.add(item.category);
 		}
-		for (const pos of normalisePos(item.pos)) {
+		for (const pos of extractPos(item.pos)) {
 			tags.add(pos);
 		}
 	}
@@ -199,7 +202,7 @@ function setupEventListeners() {
  * Filter entries based on current filters
  */
 function getFilteredEntries() {
-	return example.filter(entry => {
+	return dataset.filter(entry => {
 		// Search text filter
 		const matchesSearch = searchTerm === "" ||
 			entry.word.toLowerCase().includes(searchTerm) ||
@@ -211,7 +214,7 @@ function getFilteredEntries() {
 
 		// Tag filter
 		const matchesTags = selectedTags.size === 0 ||
-			normalisePos(entry.pos).some(pos => selectedTags.has(pos));
+			extractPos(entry.pos).some(pos => selectedTags.has(pos));
 
 		return matchesSearch && matchesCategory && matchesTags;
 	});
@@ -230,8 +233,8 @@ function sortEntries(entries) {
 			case "category":
 				return compareStrings(a.category, b.category);
 			case "pos":
-				const posA = normalisePos(a.pos);
-				const posB = normalisePos(b.pos);
+				const posA = extractPos(a.pos);
+				const posB = extractPos(b.pos);
 				const minLength = Math.min(posA.length, posB.length);
 				for (let index = 0; index < minLength; index++) {
 					const comparison = compareStrings(posA[index], posB[index]);
@@ -316,7 +319,7 @@ function createEntryItem(entry) {
 	tagsContainer.classList.add("entry-tags");
 
 	// Add parts of speech tags
-	for (const pos of normalisePos(entry.pos)) {
+	for (const pos of extractPos(entry.pos)) {
 		const posSpan = document.createElement("span");
 		posSpan.classList.add("entry-pos");
 		posSpan.textContent = pos;
@@ -339,5 +342,5 @@ function createEntryItem(entry) {
 	return li;
 }
 
-// Initialize the application when the document is loaded
-document.addEventListener("DOMContentLoaded", init);
+// Initialise the application
+init();

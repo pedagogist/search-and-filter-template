@@ -35,8 +35,8 @@ Although this template is designed for undergraduate students of a capstone proj
 1. Change the dataset by adding new JSON files within the `data` folder and remove `data/example.json`.
 2. Remove all the example resources inside the `res` folder and place your resources referenced in the dataset there.
 3. Update the `import` statement at the top of `index.js` to reference your new data file.
-4. Decide which fields from your dataset should be searchable and which should be filterable. Consider which field(s) would work best as category filters (radio buttons for single selection) and which field(s) would work as tag filters (checkboxes for multiple selection). Think about what filtering options would be most helpful for your language learners.
-5. Update the filtering, sorting, and rendering functions in `index.js` to work with your chosen fields. Modify `renderCategoryFilters`, `renderTagFilters`, `createEntryItem`, and the sorting logic in `sortEntries` to use your selected fields instead of the example's category and parts of speech.
+4. Decide which columns from your dataset should be searchable and which should be filterable. Consider which column(s) would work best as category filters (radio buttons for single selection) and which column(s) would work as tag filters (checkboxes for multiple selection). Think about what filtering options would be most helpful for your language learners.
+5. Update the filtering, sorting, and rendering functions in `index.js` to work with your chosen columns. Modify `renderCategoryFilters`, `renderTagFilters`, `createEntryItem`, and the sorting logic in `sortEntries` to use your selected columns instead of the example's category and parts of speech.
 6. Adjust the appearance of the entries in `index.css` by modifying the styling rules for your specific content elements.
 
 If you encounter any technical problems or have questions, don’t hesitate to reach out for help! We’re always here for advice and support. <sub>[Only applicable for students at EdUHK.]</sub>

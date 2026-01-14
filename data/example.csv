@@ -1,0 +1,11 @@
+id,word,pos,category,definition
+1,hello,n|interj,greeting,A phrase used for greeting someone.
+2,world,n,geography,"The earth, together with all of its countries and peoples."
+3,multimedia,adj,technology,Using more than one medium of expression.
+4,computer,n,technology,An electronic device for storing and processing data.
+5,programming,n,technology,The process of writing computer programs.
+6,language,n,education,The method of human communication.
+7,education,n,education,The process of receiving or giving systematic instruction.
+8,instructor,n,education,A person who teaches something.
+9,student,n,education,A person who is studying at a school or college.
+10,university,n,education,An educational institution for higher learning.
